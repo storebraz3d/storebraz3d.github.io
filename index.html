@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Braz 3D – Impressão 3D Profissional</title>
+<style>
+:root{--bg:#0b0d12;--bg2:#10141c;--card:#161a22;--line:#262c38;--tx:#e8ecf2;--mut:#9aa4b5;--g:#18b88a;--b:#2f7bff;--r:#e5304f;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:#0b0d12ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+.logo{font-weight:900;font-size:22px;letter-spacing:1px;font-style:italic}.logo b{color:var(--r)}
+#mb{background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;width:42px;height:38px;font-size:20px}
+nav{display:none;position:absolute;top:58px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--line);padding:8px 18px}
+nav.open{display:block}nav a{display:block;padding:11px 0;border-bottom:1px solid var(--line)}
+@media(min-width:760px){#mb{display:none}nav{display:flex;position:static;background:none;border:0;padding:0;gap:18px}nav a{border:0;padding:0;color:var(--mut);font-size:14px}}
+.top{background:var(--bg2);font-size:13px;color:var(--mut);padding:8px 0}.top .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}.top b{color:var(--g)}
+.hero{text-align:center;padding:52px 0 30px;background:radial-gradient(circle at 50% 0,#1b2a4d66,transparent 70%)}
+.hero h1{font-size:clamp(32px,8vw,56px);margin:0 0 10px;line-height:1.08}
+.hero h1 span{background:linear-gradient(90deg,var(--b),var(--r));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);max-width:540px;margin:0 auto 22px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;font-weight:700;font-size:15px;cursor:pointer;background:var(--g);color:#04130e;text-align:center}
+.btn.w{background:#fff;color:#0b1a3a}.btn.o{background:none;color:var(--tx);border:1px solid var(--line)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));padding-bottom:20px}
+.cb{border-radius:18px;padding:22px;background:linear-gradient(135deg,#1d3f94,#2f7bff);display:flex;flex-direction:column;gap:10px;justify-content:space-between}
+.cb:nth-child(2){background:linear-gradient(135deg,#7a1a30,var(--r))}.cb:nth-child(3){background:linear-gradient(135deg,#0c6e55,var(--g))}
+.cb h3{margin:0;font-size:22px}.cb p{margin:0 0 6px;opacity:.92;font-size:15px}
+section{padding:36px 0}.c{text-align:center}
+h2{font-size:26px;margin:0 0 6px}h2::before{content:"";display:inline-block;width:4px;height:20px;background:var(--g);margin-right:10px;vertical-align:-3px;border-radius:2px}
+.c h2::before{display:none}.sub{color:var(--mut);margin:0 0 18px}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}.tab{padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--mut);font-size:14px}.tab.on{background:var(--g);color:#04130e;border-color:var(--g);font-weight:700}.soon{opacity:.55}
+.kit{background:var(--card);border:1px solid var(--g);border-radius:14px;padding:16px;margin-bottom:14px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.kit h3{margin:0;color:#f4a640}.kit p{margin:4px 0 0;color:var(--mut);font-size:14px;max-width:520px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}.item .e{font-size:40px}.item h4{margin:6px 0 2px;font-size:15px}.item small{color:var(--mut)}
+.q{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px}.q button{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:#222836;color:var(--tx);font-size:18px}.q span{min-width:20px;font-weight:700}
+.tbl{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px;background:var(--card);border-radius:12px;overflow:hidden}.tbl td,.tbl th{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left}.tbl th{color:var(--g);font-size:12px;text-transform:uppercase}.tbl td:last-child{color:var(--g);font-weight:700;text-align:right}
+.bar{position:sticky;bottom:10px;margin-top:16px;background:var(--bg2);border:1px solid var(--g);border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.bar b{color:var(--g);font-size:18px}
+form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px;grid-template-columns:1fr 1fr}form .f{grid-column:1/-1}
+label{font-size:13px;color:var(--mut);display:block;margin-bottom:4px}
+input,select,textarea{width:100%;background:#0e1118;border:1px solid var(--line);border-radius:9px;color:var(--tx);padding:10px;font:inherit}textarea{min-height:90px;resize:vertical}
+.note{font-size:13px;color:var(--mut)}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{padding:16px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}summary::after{content:"▸";color:var(--b)}details[open] summary::after{content:"▾"}
+details div{padding:0 16px 16px;color:var(--mut)}
+.why{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.w{display:flex;gap:14px}.ic{flex:none;width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--b),var(--r));display:grid;place-items:center;font-size:26px}
+.w h4{margin:0 0 4px;color:var(--b);letter-spacing:.5px}.w p{margin:0;color:var(--mut);font-size:15px}
+.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.pf div{aspect-ratio:1;border-radius:14px;background:linear-gradient(135deg,#1a2238,#241a2a);border:1px dashed var(--line);display:grid;place-items:center;text-align:center;font-size:13px;color:var(--mut);padding:8px}.pf span{font-size:38px;display:block}
+.ct{background:var(--bg2);border-top:1px solid var(--line);text-align:center}.ct h3{color:var(--b);font-style:italic;margin:14px 0 4px}.ct p{margin:0;font-size:20px;font-weight:700}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:20px 0 40px}
+@media(max-width:560px){form{grid-template-columns:1fr}}
+
+.tb{background:#000;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.tb .wrap{display:flex;align-items:center;justify-content:flex-end;gap:14px;height:58px}
+.tb input{background:none;border:0;border-bottom:1px solid var(--line);width:130px;padding:6px 2px;color:var(--tx);font:inherit;font-size:14px;border-radius:0}
+.tb .sp{flex:1;color:var(--mut);font-size:13px;display:none}
+.wa{font-size:26px;line-height:1}
+.cta{background:#0c6e55;color:#fff;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:10px 14px;border-radius:8px;font-size:14px}
+.hd{background:#000}.hd .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
+.hd .logo{font-size:30px}
+#mb{background:none;border:0;color:var(--tx);font-size:30px;cursor:pointer}
+.drawer{position:fixed;inset:0;z-index:50;display:none}.drawer.open{display:flex}
+.drawer .p{width:min(78%,360px);background:#f8f8f8;color:#111;overflow:auto;padding-top:env(safe-area-inset-top,0px)}
+.drawer .ov{flex:1;background:#000a}
+.drawer .fc{display:block;margin:14px 14px 14px auto;background:#0c6e55;color:#fff;border:0;border-radius:8px;padding:14px 22px;font-weight:800;text-transform:uppercase;font-size:15px}
+.drawer a{display:block;padding:18px 20px;border-top:1px solid #ddd;font-size:18px}.drawer a.bd{background:#fff;font-weight:800;text-transform:uppercase}
+.car{position:relative;overflow:hidden;background:#000}
+.trk{display:flex;transition:transform .5s}
+.sl{min-width:100%;min-height:360px;padding:60px 28px 70px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.sl h2{font-size:clamp(26px,6vw,44px);margin:0;line-height:1.15}.sl h2::before{display:none}.sl p{margin:0;font-size:18px;max-width:520px}.sl .btn{align-self:flex-start;margin-top:6px}
+.s1{background:radial-gradient(circle at 80% 20%,#e5304f88,transparent 55%),linear-gradient(160deg,#08142e,#0b0d12)}
+.s2{background:radial-gradient(circle at 20% 20%,#18b88a77,transparent 55%),linear-gradient(160deg,#081a18,#0b0d12)}
+.s3{background:radial-gradient(circle at 80% 30%,#2f7bff88,transparent 55%),linear-gradient(160deg,#150a1c,#0b0d12)}
+.ar{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:34px;padding:10px;cursor:pointer}.ar.l{left:2px}.ar.r{right:2px}
+.dots{position:absolute;bottom:16px;left:0;right:0;display:flex;justify-content:center;gap:10px}
+.dots i{width:12px;height:12px;border-radius:50%;border:1.5px solid #fff;display:block}.dots i.on{background:#fff}
+.ft{background:#000;padding:30px 0 10px}.ft h4{font-size:22px;margin:22px 0 12px}.ft a{display:block;padding:7px 0;font-size:17px}
+.ft hr{border:0;border-top:1px solid var(--line);margin:22px 0}.ft .ln{display:flex;gap:14px;align-items:center;font-size:17px;padding:6px 0}
+.cp{background:#0c6e55;padding:22px 0;font-size:15px}.cp b{font-weight:800}
+</style>
+</head>
+<body>
+<div class="tb"><div class="wrap"><input id="sq" type="search" placeholder="Pesquisar produto" oninput="fil=this.value.toLowerCase();draw()" onchange="location.hash='catalogo'"><a class="wa" href="https://wa.me/557981576342" target="_blank" aria-label="WhatsApp">💬</a><a class="cta" href="#catalogo">Peça Braz 3D</a></div></div>
+<div class="hd"><div class="wrap"><a class="logo" href="#">BRAZ<b>3D</b></a><button id="mb" aria-label="Menu" onclick="dr(1)">☰</button></div></div>
+<div class="drawer" id="dw"><div class="p"><button class="fc" onclick="dr(0)">Fechar menu</button>
+<a href="#catalogo" onclick="dr(0)">Catálogo</a><a href="#personalizar" onclick="dr(0)">Personalizar</a><a href="#como" onclick="dr(0)">Como funciona</a><a href="#porque" onclick="dr(0)">Por que nos escolher</a><a href="#sobre" onclick="dr(0)">Sobre nós</a><a href="#contato" onclick="dr(0)">Contato</a>
+<a class="bd" href="#personalizar" onclick="dr(0)">Faça sua encomenda</a><a class="bd" href="https://wa.me/557981576342" target="_blank">Fale no WhatsApp</a></div><div class="ov" onclick="dr(0)"></div></div>
+<div class="car"><div class="trk" id="tk">
+<div class="sl s1"><h2>🎄 Kit Natalino Completo: 7 peças por R$ 50,00</h2><p>Moldes de biscoito firmes e precisos para dar destaque aos seus biscoitos decorados.</p><a class="btn" href="#catalogo">Ver catálogo</a></div>
+<div class="sl s2"><h2>🍪 Moldes a partir de R$ 7,14 cada</h2><p>Unidade avulsa R$ 8,00. Levando 4 ou mais, o preço cai para R$ 7,14 cada.</p><a class="btn" href="#catalogo">Montar meu pedido</a></div>
+<div class="sl s3"><h2>✨ Aqui sua ideia ganha forma</h2><p>Encomendas personalizadas: logo, cortador exclusivo, peças e protótipos.</p><a class="btn" href="#personalizar">Personalizar encomenda</a></div>
+</div><button class="ar l" onclick="sl(-1)">‹</button><button class="ar r" onclick="sl(1)">›</button><div class="dots" id="ds"><i></i><i></i><i></i></div></div>
+
+<div class="wrap cards">
+<div class="cb"><div><h3>Catálogo</h3><p>Moldes e cortadores de biscoito prontos para pedir. Monte seu pedido na hora e veja o total.</p></div><a class="btn w" href="#catalogo">Escolher produtos</a></div>
+<div class="cb"><div><h3>Pedidos Especiais</h3><p>Quer uma peça exclusiva, lote maior ou algo diferente? Fale direto com a nossa equipe.</p></div><a class="btn w" href="#personalizar">Personalizar encomenda</a></div>
+<div class="cb"><div><h3>Estou começando agora</h3><p>Não tem arquivo 3D nem sabe como funciona? A gente te guia do início ao fim.</p></div><a class="btn w" href="#como">Primeiros passos</a></div>
+</div>
+
+<div class="wrap">
+<section id="catalogo">
+<h2>Catálogo de impressões 3D</h2>
+<p class="sub">Escolha as peças, ajuste as quantidades e envie o pedido pelo WhatsApp.</p>
+<div class="tabs"><button class="tab on">🍪 Moldes de biscoitos</button><button class="tab soon" disabled>Em breve…</button></div>
+<div class="kit"><div><h3>🎄 Kit Natalino Completo (7 peças)</h3><p>Lâminas firmes e precisas, em PLA com paredes reforçadas. Ideal para padronizar seus biscoitos decorados de Natal.</p></div>
+<div style="text-align:right"><b style="font-size:22px;color:var(--g)">R$ 50,00</b><div class="q"><button onclick="kit(-1)">−</button><span id="kq">0</span><button onclick="kit(1)">+</button></div></div></div>
+<div class="kit" style="border-color:var(--line);justify-content:center;text-align:center"><div><b style="color:var(--g);font-size:18px">💰 Unidade avulsa: R$ 8,00</b><br><b style="color:#f4a640;font-size:18px">A partir de 4 peças: R$ 7,14 cada</b></div></div>
+<div class="grid" id="grid"></div>
+<table class="tbl"><tr><th>Quantidade</th><th>Descrição</th><th>Preço</th></tr>
+<tr><td>Unidade avulsa</td><td>Qualquer modelo do catálogo</td><td>R$ 8,00/un</td></tr>
+<tr><td>Pack parcial (a partir de 4 peças)</td><td>Monte sua seleção</td><td>R$ 7,14/un</td></tr>
+<tr><td>Kit natalino fechado</td><td>Coleção com 7 peças</td><td>R$ 50,00</td></tr></table>
+<div class="bar"><div>Total: <b id="tot">R$ 0,00</b> <span class="note" id="info"></span></div><button class="btn" onclick="sendCart()">Pedir pelo WhatsApp</button></div>
+</section>
+
+<section id="personalizar">
+<h2>Encomenda personalizada</h2>
+<p class="sub">Logo, cortador exclusivo, peça decorativa, protótipo… conte sua ideia e receba um orçamento.</p>
+<form onsubmit="sendCustom(event)">
+<div><label>Seu nome</label><input id="n" required></div>
+<div><label>Tipo de encomenda</label><select id="t"><option>Cortador/molde de biscoito</option><option>Peça decorativa</option><option>Protótipo / peça técnica</option><option>Brinde / chaveiro</option><option>Outro</option></select></div>
+<div><label>Tamanho aproximado (cm)</label><input id="s" placeholder="ex.: 6 x 6 cm"></div>
+<div><label>Quantidade</label><input id="qt" type="number" min="1" value="1"></div>
+<div><label>Cor / material</label><select id="c"><option>PLA – cor a combinar</option><option>PLA branco</option><option>PLA preto</option><option>PLA vermelho</option><option>PLA verde</option><option>Outro (informar)</option></select></div>
+<div><label>Prazo desejado</label><input id="p" placeholder="ex.: até 15/12"></div>
+<div class="f"><label>Descreva sua ideia</label><textarea id="d" required placeholder="Formato, detalhes, referências…"></textarea></div>
+<div class="f note">📎 Depois de enviar, mande fotos, desenhos ou arquivo 3D (STL, OBJ, STEP) na conversa do WhatsApp.</div>
+<div class="f"><button class="btn" type="submit">Solicitar orçamento</button></div></form>
+</section>
+
+<section id="como">
+<h2>Como funciona</h2>
+<p class="sub">Existem três formas de começar o seu pedido:</p>
+<details><summary>1ª Opção — Escolher no catálogo</summary><div>Selecione os moldes prontos, informe as quantidades e envie o pedido. Só confirmar pelo WhatsApp.</div></details>
+<details><summary>2ª Opção — Já tenho o arquivo 3D</summary><div>Envie seu arquivo em STL, OBJ, STEP ou STP, informe material, cor e quantidade, e receba o orçamento.</div></details>
+<details><summary>3ª Opção — Tenho só uma ideia</summary><div>Envie um desenho, foto ou descrição. Nós modelamos e imprimimos a peça para você.</div></details>
+</section>
+
+<section id="porque"><h2 class="c">Por que nos escolher</h2><br>
+<div class="why">
+<div class="w"><div class="ic">🔥</div><div><h4>QUALIDADE</h4><p>Peças firmes, bem acabadas e com detalhes precisos. Nossos moldes têm paredes reforçadas para cortes limpos na massa.</p></div></div>
+<div class="w"><div class="ic">⚡</div><div><h4>AGILIDADE</h4><p>Pedido combinado direto no WhatsApp, com produção e prazo alinhados com você.</p></div></div>
+<div class="w"><div class="ic">💰</div><div><h4>CUSTO X BENEFÍCIO</h4><p>Preços justos, com desconto progressivo e kit fechado com ótima vantagem financeira.</p></div></div>
+</div></section>
+
+<section><h2 class="c">Atendemos todos os perfis</h2><br>
+<details><summary>Confeitarias e padarias</summary><div>Cortadores sob medida para padronizar e valorizar seus biscoitos decorados, otimizando o tempo na bancada.</div></details>
+<details><summary>Empresariais</summary><div>Brindes personalizados, peças com a sua marca, protótipos e pequenos lotes.</div></details>
+<details><summary>Residencial</summary><div>Peças decorativas, reposição de itens e presentes personalizados.</div></details>
+</section>
+
+<section id="sobre" class="c"><h2>Sobre nós</h2>
+<p class="sub" style="max-width:600px;margin:10px auto">A <b style="color:var(--tx)">Braz 3D</b> é uma loja de impressão 3D profissional. Nosso lema: <i>aqui sua ideia ganha forma</i>. Começamos com moldes para confeitaria artesanal e atendemos também encomendas personalizadas.</p></section>
+
+<section><h2>Portfólio</h2><p class="sub">Alguns dos nossos trabalhos.</p>
+<div class="pf"><div><span>🎄</span>Kit Natalino<br>(7 peças)</div><div><span>🍪</span>Cortadores<br>de biscoito</div><div><span>🧩</span>Peças<br>personalizadas</div><div><span>➕</span>Suas fotos<br>entram aqui</div></div></section>
+</div>
+
+<div class="ft" id="contato"><div class="wrap">
+<a href="#catalogo">Catálogo</a><a href="#personalizar">Personalizar</a><a href="#como">Como funciona</a><a href="#sobre">Sobre nós</a>
+<hr><h4>Encomendas e parcerias</h4><a href="#personalizar">Faça sua encomenda</a><a href="https://wa.me/557981576342" target="_blank">Pedidos em quantidade</a>
+<h4>Dúvidas?</h4><div class="ln">💬 <a href="https://wa.me/557981576342" target="_blank">(79) 8157-6342</a></div><div class="ln">✉️ <a href="mailto:braz3dstore@gmail.com">braz3dstore@gmail.com</a></div>
+<hr><h4>Vem com a gente nas redes!</h4><div class="ln"><a href="https://wa.me/557981576342" target="_blank">WhatsApp</a> • <a href="mailto:braz3dstore@gmail.com">E-mail</a></div><br></div>
+<div class="cp"><div class="wrap">© 2026 - Braz 3D - <b>Aqui sua ideia ganha forma</b> - Todos os direitos reservados.<br>Qualidade e Inovação para Confeitaria Artesanal</div></div></div>
+
+<script>
+const WA="557981576342",P=[["🦌","Rena"],["⛄","Boneco de Neve"],["🎄","Árvore de Natal"],["🍪","Gingerbread"],["🔴","Bola de Natal"],["🎅","Papai Noel"],["⭐","Estrela"]];
+const q=P.map(()=>0);let k=0;const R=v=>"R$ "+v.toFixed(2).replace(".",",");
+let fil="",cur=0;
+function dr(o){document.getElementById("dw").classList.toggle("open",!!o)}
+function sl(d){cur=(cur+d+3)%3;document.getElementById("tk").style.transform=`translateX(-${cur*100}%)`;document.querySelectorAll("#ds i").forEach((e,i)=>e.classList.toggle("on",i==cur))}
+sl(0);setInterval(()=>sl(1),6000);
+function draw(){
+document.getElementById("grid").innerHTML=P.map((p,i)=>!p[1].toLowerCase().includes(fil)?"":`<div class="item"><div class="e">${p[0]}</div><h4>${p[1]}</h4><small>R$ 8,00 un<br>4+ peças: R$ 7,14 un</small><div class="q"><button onclick="ch(${i},-1)">−</button><span>${q[i]}</span><button onclick="ch(${i},1)">+</button></div></div>`).join("");
+document.getElementById("kq").textContent=k;
+const n=q.reduce((a,b)=>a+b,0),u=n>=4?7.14:8,t=n*u+k*50;
+document.getElementById("tot").textContent=R(t);
+document.getElementById("info").textContent=n?`(${n} avulsa(s) a ${R(u)})`:"";}
+function ch(i,d){q[i]=Math.max(0,q[i]+d);draw()}function kit(d){k=Math.max(0,k+d);draw()}
+function go(m){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(m),"_blank")}
+function sendCart(){const n=q.reduce((a,b)=>a+b,0);if(!n&&!k){alert("Escolha ao menos uma peça.");return}
+let m="Olá, Braz 3D! Quero fazer um pedido:\n";if(k)m+=`\n• ${k}x Kit Natalino Completo (7 peças)`;
+P.forEach((p,i)=>{if(q[i])m+=`\n• ${q[i]}x ${p[1]}`});m+="\n\nTotal estimado: "+document.getElementById("tot").textContent;go(m)}
+function sendCustom(e){e.preventDefault();const v=id=>document.getElementById(id).value;
+go(`Olá, Braz 3D! Quero um orçamento personalizado:\n\nNome: ${v("n")}\nTipo: ${v("t")}\nTamanho: ${v("s")||"a definir"}\nQuantidade: ${v("qt")}\nMaterial/cor: ${v("c")}\nPrazo: ${v("p")||"a combinar"}\n\nIdeia: ${v("d")}`)}
+draw();
+</script>
+</body>
+</html>
